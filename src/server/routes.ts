@@ -17,7 +17,7 @@ export function registerRoutes(app: FastifyInstance) {
                 where: { serviceId: s.id, createdAt: { gte: day } }
             })
 
-            const up = checks.length ? (checks.filter(c => c.online).length / checks.length) * 100 : 100
+            const up = checks.length ? (checks.filter((c: any) => c.online).length / checks.length) * 100 : 100
 
             return {
                 id: s.id,

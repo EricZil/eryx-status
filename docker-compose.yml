@@ -3,10 +3,8 @@ services:
     build: .
     ports:
       - "6348:6348"
-    environment:
-      - DATABASE_URL=${DATABASE_URL}
-      - PORT=6348
-      - HOST=0.0.0.0
+    env_file:
+      - .env
     volumes:
       - ./services.json:/app/services.json:ro
     restart: unless-stopped
