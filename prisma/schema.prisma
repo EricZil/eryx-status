@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Check {
+  id        String   @id @default(cuid())
+  serviceId String
+  online    Boolean
+  status    Int?
+  latency   Int
+  error     String?
+  createdAt DateTime @default(now())
+
+  @@index([serviceId, createdAt])
+  @@map("checks")
+}

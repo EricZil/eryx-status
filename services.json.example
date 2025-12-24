@@ -1,0 +1,19 @@
+{
+    "checkInterval": 300,
+    "services": [
+        {
+            "id": "google",
+            "name": "gugle",
+            "url": "https://google.com",
+            "description": "imagine google going down"
+        },
+        {
+            "id": "db",
+            "name": "Nasa's db",
+            "url": "db.nasa.gov",
+            "type": "tcp",
+            "port": 3306,
+            "description": "data goes brrr"
+        }
+    ]
+}
